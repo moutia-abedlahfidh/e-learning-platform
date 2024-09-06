@@ -5,7 +5,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 
 const routes: Routes = [
   {path : 'slidebar' , component : SlidebarComponent,  },
-  {path : 'authentication' , component : AuthenticationComponent}
+  {path : 'signin' , component : AuthenticationComponent}
 ];
 
 @NgModule({
