@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SlidebarComponent } from './slidebar/slidebar.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 
 
@@ -11,6 +12,7 @@ import { SlidebarComponent } from './slidebar/slidebar.component';
   declarations: [
     AppComponent,
     SlidebarComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
