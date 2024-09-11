@@ -16,6 +16,6 @@ export class MyserviceService {
 
   checkAccount(data:any)
   {
-    return this.http.get(this.url+'teacher/checkAccount',data);
+    return this.http.post(this.url+'teacher/checkAccount',data);
   }
 }

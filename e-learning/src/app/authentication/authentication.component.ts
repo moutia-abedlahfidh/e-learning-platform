@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authentication',
@@ -8,7 +9,7 @@ import { MyserviceService } from '../myservice.service';
 })
 export class AuthenticationComponent {
 
-  constructor (private service : MyserviceService) {}
+  constructor (private service : MyserviceService,public router : Router) {}
 
   @ViewChild('controlEmail',{static : false})  controlEmail :any ;
   @ViewChild('controlPassword',{static : false})  controlPassword :any ;
@@ -37,7 +38,9 @@ export class AuthenticationComponent {
     }else {
       this.service.checkAccount(this.user).subscribe(
         res=>{
-          return res ;
+          if (res){
+            this.router.navigate(['/panel']);
+          }
         },
         err=>{
           return err ;
