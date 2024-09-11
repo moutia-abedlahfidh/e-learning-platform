@@ -5,6 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SlidebarComponent } from './slidebar/slidebar.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { SignupComponent } from './signup/signup.component';
+import { MyserviceService } from './myservice.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,10 +17,13 @@ import { AuthenticationComponent } from './authentication/authentication.compone
     AppComponent,
     SlidebarComponent,
     AuthenticationComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

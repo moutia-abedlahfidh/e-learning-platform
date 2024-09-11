@@ -1,0 +1,75 @@
+<section class="">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form>
+            <h4>Sign up</h4>
+            <!-- Name input -->
+            <div data-mdb-input-init class="form-outline mb-2">
+                <input type="text" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter your name"  name="name" [(ngModel)]="user.name" />
+                <label class="form-label" for="form3Example3">Name</label>
+              </div>
+            <h5 #controlName class="controle_saisie">Please write your name</h5>
+  
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-2">
+              <input type="email" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter a valid email address" name="email" [(ngModel)]="user.email" />
+              <label class="form-label" for="form3Example3">Email address</label>
+            </div>
+            <h5 #controlEmail class="controle_saisie">Please write your email</h5>
+            
+            <!-- Password input -->
+            <div data-mdb-input-init class="form-outline mb-2">
+              <input type="email" id="form3Example3" class="form-control form-control-lg"
+                placeholder="Enter password" name="password" [(ngModel)]="user.password"/>
+              <label class="form-label" for="form3Example4">Password</label>
+            </div>
+            <h5 #controlPassword class="controle_saisie">Please write your password</h5>
+
+            <!-- Password confirmation-->
+            <div data-mdb-input-init class="form-outline mb-2">
+                <input type="password" id="form3Example4" class="form-control form-control-lg"
+                  placeholder="confirm your password" name="confirmPassword" [(ngModel)]="user.confirmPassword"/>
+                <label class="form-label" for="form3Example4">confirm Password</label>
+              </div>
+              <h5 #repeatPassword class="controle_saisie">Password doesn't match</h5>
+
+            <!-- Type input -->
+            <div data-mdb-input-init class="form-outline mb-2">
+                <select id="form3Example3" class="form-control form-control-lg" [(ngModel)]="user.type" name="type">
+                  <option value="" disabled >Option</option>
+                  <option value="teacher">Teacher</option>
+                  <option value="student">Student</option>
+                </select>
+              <label class="form-label" for="form3Example3">Type</label>
+            </div>
+            <h5 #controlType class="controle_saisie">Please write your type</h5>
+  
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                <label class="form-check-label" for="form2Example3">
+                  Remember me
+                </label>
+              </div>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="this.addData(this.user)">create account</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">have an account? <a href="#!" [routerLink]="['/signin']"
+                  class="link-danger" >Login</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
