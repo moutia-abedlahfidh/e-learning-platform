@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-authentication',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class AuthenticationComponent {
 
-  constructor (private service : MyserviceService,public router : Router) {}
+  constructor (private service : MyserviceService,public router : Router,private cookieService: CookieService) {}
 
   @ViewChild('controlEmail',{static : false})  controlEmail :any ;
   @ViewChild('controlPassword',{static : false})  controlPassword :any ;
@@ -39,6 +40,7 @@ export class AuthenticationComponent {
       this.service.checkAccount(this.user).subscribe(
         res=>{
           if (res){
+            this.cookieService.set("authenticated","true",7);
             this.router.navigate(['/panel']);
           }
         },

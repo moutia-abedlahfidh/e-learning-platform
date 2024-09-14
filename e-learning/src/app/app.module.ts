@@ -9,6 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { RedirectComponentComponent } from './redirect-component/redirect-component.component';
 
 
 
@@ -18,6 +19,7 @@ import { FormsModule } from '@angular/forms';
     SlidebarComponent,
     AuthenticationComponent,
     SignupComponent,
+    RedirectComponentComponent,
   ],
   imports: [
     BrowserModule,

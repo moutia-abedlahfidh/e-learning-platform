@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MyserviceService } from '../myservice.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-slidebar',
@@ -6,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slidebar.component.css'] // Note: Use 'styleUrls' instead of 'styleUrl'
 })
 export class SlidebarComponent implements OnInit {
+  constructor(private service : MyserviceService,private cookies : CookieService,private route : Router) {}
   
   ngOnInit(): void {
     this.initializeNavbar();
@@ -44,5 +48,10 @@ export class SlidebarComponent implements OnInit {
     }
 
     linkColor.forEach(l => l.addEventListener('click', colorLink));
+  }
+
+  public Logout() {
+    this.cookies.deleteAll();
+    this.route.navigate(['/signin']);
   }
 }

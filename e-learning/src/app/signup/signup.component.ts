@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-signup',
