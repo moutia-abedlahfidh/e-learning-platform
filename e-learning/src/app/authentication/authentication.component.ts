@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { MyserviceService } from '../myservice.service';
+import { MyserviceService, User } from '../myservice.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -20,6 +20,16 @@ export class AuthenticationComponent {
     password : ''
   }
 
+  public toMap(data:any) : User {
+    return {
+      email : data['email'],
+      password : data['password'],
+      name : data['name'],
+      id : data['id'],
+      type : data['type'],
+    };
+  }
+
   public checkdata() {
     if (this.user.email == "" || this.user.password=='') 
     {
@@ -38,11 +48,14 @@ export class AuthenticationComponent {
         }
     }else {
       this.service.checkAccount(this.user).subscribe(
-        res=>{
+        (res)=>{
           if (res){
+            this.service.user = this.toMap(res) ;
             this.cookieService.set("authenticated","true",7);
             this.router.navigate(['/panel']);
+            return res ;
           }
+          return false ;
         },
         err=>{
           return err ;

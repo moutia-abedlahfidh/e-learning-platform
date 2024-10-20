@@ -1,0 +1,16 @@
+<app-slidebar></app-slidebar>
+<div class="add_course_space">
+    <div class="import_file">
+        <input type="file" id="file" (change)="onFileSelected($event)">
+    </div>
+    <div class="import_inputs">
+        <h3 class="info_input">Name :</h3>
+        <input type="text" placeholder="name course" class="generate" [(ngModel)]="data.name_course">
+        <h3 class="info_input">Code :</h3>
+        <div class="generate_code">
+            <input type="text" disabled placeholder="code course" id="generate" >
+            <button id="generate" (click)="generateCode()">generate</button>
+        </div>
+        <button class="add_course_btn" (click)="addCourse()">add course</button>
+    </div>
+</div>

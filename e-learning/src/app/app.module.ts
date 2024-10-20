@@ -10,6 +10,10 @@ import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { RedirectComponentComponent } from './redirect-component/redirect-component.component';
+import { UsersComponent } from './users/users.component';
+import { CoursesComponent } from './courses/courses.component';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { SettingsComponent } from './settings/settings.component';
 
 
 
@@ -20,6 +24,10 @@ import { RedirectComponentComponent } from './redirect-component/redirect-compon
     AuthenticationComponent,
     SignupComponent,
     RedirectComponentComponent,
+    UsersComponent,
+    CoursesComponent,
+    AddCourseComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,9 +10,21 @@ import { Route, Router } from '@angular/router';
 })
 export class SlidebarComponent implements OnInit {
   constructor(private service : MyserviceService,private cookies : CookieService,private route : Router) {}
-  
+  public Courses : any ;
+  public options : any ;
   ngOnInit(): void {
     this.initializeNavbar();
+    this.options = document.querySelector(".options")  ;  }
+  
+
+  changeStatus() {
+    console.log(this.options);
+    if (this.options.style.display == "none")
+    {
+      this.options.style.display = "block" ;
+    }else{
+      this.options.style.display = "none" ;
+    }
   }
 
   private initializeNavbar(): void {
@@ -54,4 +66,8 @@ export class SlidebarComponent implements OnInit {
     this.cookies.deleteAll();
     this.route.navigate(['/signin']);
   }
+
+  
+
+  
 }
