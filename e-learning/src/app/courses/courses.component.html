@@ -1,0 +1,11 @@
+<app-slidebar></app-slidebar>
+<div  id="courses">
+    <div *ngFor="let course of this.Courses" class="card" style="width: 17rem;">
+        <img class="card-img-top" src={{course.logo_course}} alt="Card image cap" width="100px" height="150px">
+        <div class="card-body">
+          <h5 class="card-title">{{course.name_course}}</h5>
+          <p class="card-text">code : {{course.code}}</p>
+          <a href="#" class="btn btn-primary">check course</a>
+        </div>
+      </div>
+</div>
