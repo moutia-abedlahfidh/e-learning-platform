@@ -1,0 +1,1 @@
+This project is a full-stack web application developed using Angular for the frontend and Spring Boot for the backend. It demonstrates a modern, scalable architecture with a RESTful API, secure data handling, and a responsive user interface.
